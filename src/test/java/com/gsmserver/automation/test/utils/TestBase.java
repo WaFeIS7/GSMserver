@@ -14,7 +14,8 @@ public class TestBase {
 
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "/home/qa/chromeDriver/chromedriver");
+//     System.setProperty("webdriver.chrome.driver", "/home/qa/chromeDriver/chromedriver"); For Linux
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Вадим\\Downloads\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -27,5 +28,4 @@ public class TestBase {
             driver.quit();
         }
     }
-
 }
