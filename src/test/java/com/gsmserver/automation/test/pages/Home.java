@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends WaitFor {
-    public HomePage(WebDriver driver) {
+public class Home extends WaitFor {
+    public Home(WebDriver driver) {
         super(driver);
     }
 
@@ -15,17 +15,17 @@ public class HomePage extends WaitFor {
     @FindBy(xpath = "//a[contains(text(), 'Донглы')]")
     private WebElement categoryDongle;
 
-    public HomePage openSite(String url) {
+    public Home openSite(String url) {
         driver.get(url);
         return this;
     }
 
-    public HomePage selectSectionFirmware() {
+    public Home selectSectionFirmware() {
         firstcatagory.click();
         return this;
     }
 
-    public HomePage selectCategoryDongle() {
+    public Home selectCategoryDongle() {
         waitforElemenIsDisplayed(categoryDongle).click();
         return this;
     }

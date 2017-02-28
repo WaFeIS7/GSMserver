@@ -6,21 +6,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 
-public class CartPage extends WaitFor {
-    public CartPage(WebDriver driver) {
+public class Cart extends WaitFor {
+    public Cart(WebDriver driver) {
         super(driver);
     }
 
     @FindBy(xpath = ".//div[@class='product-title shade'] // a[contains(text(),'CS-Tool Dongle')]")
     private WebElement namePurchase;
     @FindBy(id = "goto-checkout")
-    private WebElement buttomCheckout;
+    private WebElement buttonMakeOrder;
 
     public String namePurchase() {
         return namePurchase.getText();
     }
 
-    public void clickCheckout() {
-        buttomCheckout.click();
+    public void clickButtonMakeOrder() {
+        buttonMakeOrder.click();
     }
 }

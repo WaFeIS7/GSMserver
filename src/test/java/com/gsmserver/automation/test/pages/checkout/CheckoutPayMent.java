@@ -1,26 +1,26 @@
-package com.gsmserver.automation.test.pages;
+package com.gsmserver.automation.test.pages.checkout;
 
 import com.gsmserver.automation.test.utils.WaitFor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class PayMentPage extends WaitFor {
-    public PayMentPage(WebDriver driver) {
+public class CheckoutPayMent extends WaitFor {
+    public CheckoutPayMent(WebDriver driver) {
         super(driver);
     }
 
     @FindBy(xpath = ".//tr[@data-sm-target='checkout.payment-service--801044059'] //td[1]")
     private WebElement beznal;
     @FindBy(xpath = ".//a[@class='styled-link-checkout']")
-    private WebElement goCheckout;
+    private WebElement buttonNext;
 
-    public PayMentPage selectBeznalPayment() {
+    public CheckoutPayMent selectBeznalPayment() {
         beznal.click();
         return this;
     }
 
-    public void goCheckout() {
-        goCheckout.click();
+    public void clickButtonNext() {
+        buttonNext.click();
     }
 }
