@@ -11,11 +11,6 @@ import org.testng.annotations.Test;
 
 public class TestMakeOrder extends TestBase {
 
-    private final static String NAME_PURCHASE = "CS-Tool Dongle";
-    private final static String ORGANIZATION_ID = "Test 12214564321145645112";
-    private final static String ORGANIZATION_NAME = "Test MVD";
-
-
     @Test
     public void Test_makePurchase() throws Exception {
         Home home = new Home(driver);
@@ -29,6 +24,7 @@ public class TestMakeOrder extends TestBase {
                 .clickOnButtonBasket();
         Cart cart = new Cart(driver);
         String namePurchase = cart.namePurchase();
+        String NAME_PURCHASE = "CS-Tool Dongle";
         Assert.assertEquals(NAME_PURCHASE, namePurchase);
         cart
                 .clickButtonMakeOrder();
@@ -47,6 +43,7 @@ public class TestMakeOrder extends TestBase {
                 .enterPhoneNumber("232123123")
                 .clickButtonNext();
         String idOrganization = checkoutDelivery.getId();
+        String ORGANIZATION_ID = "Test 12214564321145645112";
         Assert.assertEquals(ORGANIZATION_ID, idOrganization);
         checkoutDelivery
                 .selectDeliveryByCharkov()
@@ -57,6 +54,7 @@ public class TestMakeOrder extends TestBase {
                 .clickButtonNext();
         CheckoutConfirmation checkoutConfirmation = new CheckoutConfirmation(driver);
         String nameOrganization = checkoutConfirmation.getNameOrganisation();
+        String ORGANIZATION_NAME = "Test MVD";
         Assert.assertEquals(ORGANIZATION_NAME, nameOrganization);
     }
 }
