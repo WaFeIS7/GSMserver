@@ -14,8 +14,10 @@ public class Home extends WaitFor {
     private WebElement firstcatagory;
     @FindBy(xpath = "//a[contains(text(), 'Донглы')]")
     private WebElement categoryDongle;
+    @FindBy(css = ".login")
+    private WebElement buttonEnter;
 
-    public Home openSite(String url) {
+    public Home openHomePage(String url) {
         driver.get(url);
         return this;
     }
@@ -27,6 +29,11 @@ public class Home extends WaitFor {
 
     public Home selectCategoryDongle() {
         waitforElemenIsDisplayed(categoryDongle).click();
+        return this;
+    }
+
+    public Home clickOnButtonEnter() {
+        buttonEnter.click();
         return this;
     }
 }

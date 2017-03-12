@@ -33,7 +33,7 @@ public class CheckoutDelivery extends WaitFor {
     private WebElement deliveryCharkov;
     @FindBy(xpath = ".//a[@class='styled-link-checkout']")
     private WebElement buttonNext;
-    @FindBy(how = How.CSS, css = ".styled-phone-edit")
+    @FindBy(how = How.CSS, css = ".styled-phone-edit > input")
     private WebElement textFieldPhone;
 
 
@@ -74,11 +74,7 @@ public class CheckoutDelivery extends WaitFor {
     }
 
     public CheckoutDelivery enterPhoneNumber( String phoneNumber) {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(textFieldPhone);
-        actions.click();
-        actions.sendKeys(phoneNumber);
-        actions.build().perform();
+        textFieldPhone.sendKeys(phoneNumber);
         return this;
     }
 
