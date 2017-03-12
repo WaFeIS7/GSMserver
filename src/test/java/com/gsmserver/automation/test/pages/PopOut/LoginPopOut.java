@@ -1,4 +1,4 @@
-package com.gsmserver.automation.test.pages;
+package com.gsmserver.automation.test.pages.PopOut;
 
 import com.gsmserver.automation.test.utils.WaitFor;
 import org.openqa.selenium.WebDriver;
@@ -13,8 +13,14 @@ public class LoginPopOut extends WaitFor {
 
     @FindBy(how = How.CSS, css = ".pretty-link.gray-link[href='/checkout']")
     private WebElement buyWitoutRegistration;
+    @FindBy(css = ".tab:nth-of-type(2)")
+    private  WebElement tabRegistration;
 
     public void makeOrderWithoutRegistration() {
         buyWitoutRegistration.click();
+    }
+
+    public void clickTabRegistration() {
+        tabRegistration.click();
     }
 }

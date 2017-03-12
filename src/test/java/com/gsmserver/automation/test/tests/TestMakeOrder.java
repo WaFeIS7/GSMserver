@@ -1,6 +1,7 @@
 package com.gsmserver.automation.test.tests;
 
 import com.gsmserver.automation.test.pages.*;
+import com.gsmserver.automation.test.pages.PopOut.LoginPopOut;
 import com.gsmserver.automation.test.pages.checkout.CheckoutConfirmation;
 import com.gsmserver.automation.test.pages.checkout.CheckoutDelivery;
 import com.gsmserver.automation.test.pages.checkout.CheckoutPayMent;
@@ -15,7 +16,7 @@ public class TestMakeOrder extends TestBase {
     public void Test_makePurchase() throws Exception {
         Home home = new Home(driver);
         home
-                .openSite("https://gsmserver.com.ua/")
+                .openHomePage("https://gsmserver.com.ua/")
                 .selectSectionFirmware()
                 .selectCategoryDongle();
         Product product = new Product(driver);
