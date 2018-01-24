@@ -6,6 +6,7 @@ import com.gsmserver.automation.test.pages.PopOut.RegistrationPopOut;
 import com.gsmserver.automation.test.utils.TestBase;
 import org.testng.annotations.Test;
 
+
 public class RegistrationTest extends TestBase {
 
 
